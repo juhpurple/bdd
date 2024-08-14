@@ -14,13 +14,13 @@ datasource db {
 }
 
 model Music {
-  id           Int      @id @default(autoincrement())
+  id           Int      @id @default(autoincrement())@unique
   title        String   @db.VarChar(25)
   artists      String
   album        String?  @db.VarChar(50)
   genres       String
-  single       Boolean
-  release_year DateTime @db.Date
+  single       Boolean  @db.TinyInt
+  release_year Int      @db.Year
   duration     DateTime @db.Time
 }
 
